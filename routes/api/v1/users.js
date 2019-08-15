@@ -6,7 +6,7 @@ var saltRounds = 12;
 var uuidv5 = require('uuid/v5')
 
 /*POST new user*/
-router.post("/", function(req, res, next) {
+router.post('/', function(req, res, next) {
   if (req.body.password != req.body.password_confirmation) {
     return res.status(500).json({ errors: 'Passwords Do Not Match' });
   }
@@ -17,11 +17,11 @@ router.post("/", function(req, res, next) {
       api_key: uuidv5(req.body.email, uuidv5.DNS)
     })
     .then(user => {
-      res.setHeader("Content-Type", "application/json");
+      res.setHeader('Content-Type', 'application/json');
       res.status(201).send(JSON.stringify({ api_key: user.api_key }));
     })
     .catch(error => {
-      res.setHeader("Content-Type", "application/json");
+      res.setHeader('Content-Type', 'application/json');
       res.status(500).send({ error });
     });
   });
