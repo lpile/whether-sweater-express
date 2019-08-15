@@ -31,5 +31,18 @@ Body:
 }
 ```
 
+```
+POST /api/v1/sessions
+Headers:
+Content-Type: application/json
+Accept: application/json
+
+Body:
+{
+  "email": "my_email@example.com",
+  "password": "password"
+}
+```
+
 ## Production Site
 Not secure at the moment, message me for link
