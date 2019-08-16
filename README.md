@@ -44,5 +44,31 @@ Body:
 }
 ```
 
+```
+POST /api/v1/favorites
+Content-Type: application/json
+Accept: application/json
+
+body:
+
+{
+  "location": "Denver, CO",
+  "api_key": "jgn983hy48thw9begh98h4539h4"
+}
+```
+
+```
+DELETE /api/v1/favorites
+Content-Type: application/json
+Accept: application/json
+
+body:
+
+{
+  "location": "Denver, CO",
+  "api_key": "jgn983hy48thw9begh98h4539h4"
+}
+```
+
 ## Production Site
 Not secure at the moment, message me for link
