@@ -25,4 +25,27 @@ router.post('/', function(req, res, next) {
   });
 });
 
+/* DELETE favorite */
+router.delete('/', function(req, res, next) {
+  User.findOne({ where: { api_key: req.body.api_key } })
+  .then(user => {
+    Location.destroy({
+      where: {
+        name: req.body.location,
+        UserId: user.id
+      }
+    }).then(location => {
+      res.setHeader('Content-Type', 'application/json');
+      res.status(204)
+    }).catch(error => {
+      res.setHeader('Content-Type', 'application/json');
+      res.status(500).send({ error });
+    });
+  })
+  .catch(error => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(401).send({ error: 'Unauthorized' });
+  });
+});
+
 module.exports = router;
