@@ -13,6 +13,7 @@ The project was built using Express.js which implements the following:
 
 ## Tech Stack
 - Express 4.16
+- Node 10.16.2
 - Sequelize 5.15
 - Jest
 
@@ -66,6 +67,17 @@ body:
 
 {
   "location": "Denver, CO",
+  "api_key": "jgn983hy48thw9begh98h4539h4"
+}
+```
+
+```
+GET /api/v1/forecast?location=denver,co
+Content-Type: application/json
+Accept: application/json
+
+body:
+{
   "api_key": "jgn983hy48thw9begh98h4539h4"
 }
 ```
